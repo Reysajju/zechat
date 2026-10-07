@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Zed Chat remote config",
+  "type": "object",
+  "properties": {
+    "version": { "type": "number", "description": "Config schema version" },
+    "authStrategy": { "enum": ["modal", "external", "same"] },
+    "allowZoom": { "type": "boolean", "description": "Allow pinch zoom in the chat" },
+    "uaOverride": { "type": ["string", "null"], "description": "Full UA override (null = built-in mobile UA)" },
+    "downloadMaxMb": { "type": "number", "minimum": 1, "maximum": 200 },
+    "minVersion": { "type": ["string", "null"], "description": "Force store update below this app version" },
+    "showFloatingMenu": { "type": "boolean" },
+    "debug": { "type": "boolean", "description": "Enable bridge logging to Metro console" },
+    "extraAllowedSuffixes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Extra domain suffixes allowed inside the WebView"
+    },
+    "selectors": {
+      "type": "object",
+      "properties": {
+        "composer": { "type": "string" },
+        "newChat": { "type": "string" },
+        "chatScroll": { "type": "string" },
+        "drawerClose": { "type": "string" },
+        "taskRunning": { "type": "array", "items": { "type": "string" } },
+        "sendButton": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "cssPatch": { "type": "string", "description": "CSS appended after the built-in injected stylesheet" }
+  },
+  "required": []
+}

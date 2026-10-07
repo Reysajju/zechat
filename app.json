@@ -1,0 +1,80 @@
+{
+  "expo": {
+    "name": "Zed Chat",
+    "slug": "zedchat",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "zedchat",
+    "newArchEnabled": true,
+    "backgroundColor": "#0B0F14",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B0F14"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zedchat.app",
+      "buildNumber": "1",
+      "requireFullScreen": false,
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "NSCameraUsageDescription": "Zed Chat needs camera access so you can take photos to attach in chat.",
+        "NSMicrophoneUsageDescription": "Zed Chat needs microphone access for voice input features on the chat service.",
+        "NSPhotoLibraryAddUsageDescription": "Zed Chat saves images you choose to download to your photo library.",
+        "NSFaceIDUsageDescription": "Zed Chat uses Face ID to unlock the app when the app lock is enabled.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.zedchat.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#0B0F14",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "softwareKeyboardLayoutMode": "resize",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.VIBRATE"
+      ],
+      "blockedPermissions": [
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-splash-screen",
+      "expo-web-browser",
+      "expo-sharing",
+      "expo-share-intent",
+      ["expo-local-authentication", { "faceIDPermission": "Zed Chat uses Face ID to unlock the app when the app lock is enabled." }],
+      "@sentry/react-native",
+      ["expo-updates", { "username": "your-expo-username" }]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "00000000-0000-0000-0000-000000000000"
+      },
+      "sentryDsn": "",
+      "minVersion": null
+    },
+    "runtimeVersion": { "policy": "appVersion" },
+    "updates": {
+      "url": "https://u.expo.dev/00000000-0000-0000-0000-000000000000",
+      "fallbackToCacheTimeout": 0
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

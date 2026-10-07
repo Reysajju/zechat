@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "_comment": "Hot-patch example for Zed Chat. Host at the EXPO_PUBLIC_RC_URL. Only include keys you want to override; the app merges over built-in defaults. See docs/remote-config.schema.json.",
+  "authStrategy": "modal",
+  "allowZoom": false,
+  "uaOverride": null,
+  "downloadMaxMb": 25,
+  "minVersion": null,
+  "showFloatingMenu": true,
+  "debug": false,
+  "extraAllowedSuffixes": [],
+  "selectors": {
+    "composer": "textarea, [contenteditable=\"true\"]",
+    "newChat": "",
+    "chatScroll": "",
+    "drawerClose": "",
+    "taskRunning": [
+      "[data-testid=\"stop-button\"]",
+      "button[aria-label*=\"stop\" i]"
+    ],
+    "sendButton": [
+      "button[type=\"submit\"]",
+      "[aria-label*=\"send\" i]"
+    ]
+  },
+  "cssPatch": ""
+}
